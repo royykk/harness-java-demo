@@ -1,10 +1,6 @@
 replicaCount: 1
 name: myapp-dev
 nodePort: 30007
-
-ingress:
-  host: harness-java-demo-dev.local
-
 resources:
   requests:
     cpu: 200m

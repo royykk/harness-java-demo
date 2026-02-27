@@ -1,9 +1,5 @@
 replicaCount: 1
-image:
-  repository: dockekroy/harness-java-demo
-  tag: "latest"
-  pullPolicy: IfNotPresent
-
+image: <+artifact.image>
 service:
   type: ClusterIP
   port: 8080

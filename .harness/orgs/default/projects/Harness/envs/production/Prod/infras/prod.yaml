@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: prod
+  identifier: prod
+  orgIdentifier: default
+  projectIdentifier: Harness
+  environmentRef: Prod
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: harnessdemocluster
+    namespace: harness-demo
+    releaseName: myapp
+  allowSimultaneousDeployments: false

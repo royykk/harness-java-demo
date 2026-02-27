@@ -38,4 +38,8 @@ pipeline:
                   identifier: mavenbuild
                   spec:
                     shell: Sh
-                    command: mvn -v
+                    command: |-
+                      pwd
+                      ls -latr
+                      mvn -v
+                      mvn clean verify

@@ -1,0 +1,41 @@
+pipeline:
+  name: myapp-full-ci-cd-pipeline
+  identifier: myappfullcicdpipeline
+  projectIdentifier: Harness
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: harnessjavademo
+        repoName: harness-java-demo
+        build: <+input>
+  stages:
+    - stage:
+        name: ci-build
+        identifier: mavenbuild
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+            paths: []
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          buildIntelligence:
+            enabled: false
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: maven-build
+                  identifier: mavenbuild
+                  spec:
+                    shell: Sh
+                    command: mvn -v

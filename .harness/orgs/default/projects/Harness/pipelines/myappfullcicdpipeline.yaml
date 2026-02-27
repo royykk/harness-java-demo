@@ -37,6 +37,8 @@ pipeline:
                   name: maven-build
                   identifier: mavenbuild
                   spec:
+                    connectorRef: account.harnessImage
+                    image: maven:3.9.9-eclipse-temurin-17
                     shell: Sh
                     command: |-
                       pwd

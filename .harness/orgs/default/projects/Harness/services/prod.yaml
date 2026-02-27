@@ -27,4 +27,15 @@ service:
               enableDeclarativeRollback: false
               helmVersion: V3
               fetchHelmChartMetadata: false
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: harnessjavademodocker
+                imagePath: dockekroy/harness-java-demo
+                tag: <+pipeline.sequenceId>
+                digest: ""
+              identifier: prod
+              type: DockerRegistry
     type: NativeHelm

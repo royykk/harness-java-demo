@@ -1,0 +1,14 @@
+template:
+  name: docker-build-and-push
+  type: Step
+  projectIdentifier: Harness
+  orgIdentifier: default
+  spec:
+    type: BuildAndPushDockerRegistry
+    spec:
+      connectorRef: harnessjavademodocker
+      repo: dockekroy/harness-java-demo
+      tags:
+        - <+pipeline.sequenceId>
+  identifier: dockerbuildandpush
+  versionLabel: "1"

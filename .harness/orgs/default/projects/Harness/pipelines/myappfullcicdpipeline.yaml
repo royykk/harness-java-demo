@@ -50,7 +50,7 @@ pipeline:
                   name: BuildAndPushDockerImage
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: account.harnessImage
+                    connectorRef: harnessjavademodocker
                     repo: dockekroy/harness-java-demo
                     tags:
                       - <+pipeline.sequenceId>

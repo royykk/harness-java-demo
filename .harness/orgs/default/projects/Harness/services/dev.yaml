@@ -34,7 +34,7 @@ service:
             - spec:
                 connectorRef: harnessjavademodocker
                 imagePath: dockekroy/harness-java-demo
-                tag: <+pipeline.sequenceId>
+                tag: <+input>
                 digest: ""
               identifier: dev
               type: DockerRegistry

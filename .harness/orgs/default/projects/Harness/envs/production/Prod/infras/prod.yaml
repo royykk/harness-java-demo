@@ -8,6 +8,6 @@ infrastructureDefinition:
   type: KubernetesDirect
   spec:
     connectorRef: harnessdemocluster
-    namespace: harness-demo
+    namespace: harness-demo-prod
     releaseName: myapp
   allowSimultaneousDeployments: false

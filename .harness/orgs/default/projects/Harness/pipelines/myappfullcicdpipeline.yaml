@@ -42,14 +42,11 @@ pipeline:
                     shell: Sh
                     command: mvn clean verify
               - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerImage
-                  identifier: BuildAndPushDockerRegistry_1
-                  spec:
-                    connectorRef: harnessjavademodocker
-                    repo: dockekroy/harness-java-demo
-                    tags:
-                      - <+pipeline.sequenceId>
+                  name: docker-build-and-push
+                  identifier: dockerbuildandpush
+                  template:
+                    templateRef: dockerbuildandpush
+                    versionLabel: "1"
     - stage:
         name: myApp-Dev-CD-Deployment
         identifier: myAppDevCDDeployment

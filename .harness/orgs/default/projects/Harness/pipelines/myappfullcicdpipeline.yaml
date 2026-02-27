@@ -40,11 +40,7 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: maven:3.9.9-eclipse-temurin-17
                     shell: Sh
-                    command: |-
-                      pwd
-                      ls -latr
-                      mvn -v
-                      mvn clean verify
+                    command: mvn clean verify
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerImage

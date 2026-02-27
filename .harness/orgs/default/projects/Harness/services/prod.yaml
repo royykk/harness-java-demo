@@ -1,0 +1,5 @@
+service:
+  name: prod
+  identifier: prod
+  orgIdentifier: default
+  projectIdentifier: Harness

@@ -1,0 +1,14 @@
+inputSet:
+  name: main
+  identifier: main
+  orgIdentifier: default
+  projectIdentifier: Harness
+  pipeline:
+    identifier: myappfullcicdpipeline
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>

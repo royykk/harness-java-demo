@@ -56,14 +56,6 @@ pipeline:
           deploymentType: NativeHelm
           service:
             serviceRef: dev
-            serviceInputs:
-              serviceDefinition:
-                type: NativeHelm
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           environment:
             environmentRef: Dev
             deployToAll: false

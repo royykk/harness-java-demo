@@ -92,5 +92,31 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+    - stage:
+        name: Production-Approval
+        identifier: ProductionApproval
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Production-Approval
+                  identifier: ProductionApproval
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - ProdApprovers
+                    isAutoRejectEnabled: false
+                    approverInputs: []
+        tags: {}
   allowStageExecutions: true
   fixedInputsOnRerun: false

@@ -47,7 +47,7 @@ pipeline:
                       mvn clean verify
               - step:
                   type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
+                  name: BuildAndPushDockerImage
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: account.harnessImage

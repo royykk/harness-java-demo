@@ -45,3 +45,12 @@ pipeline:
                       ls -latr
                       mvn -v
                       mvn clean verify
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: harness-java-demo
+                    tags:
+                      - <+pipeline.sequenceId>

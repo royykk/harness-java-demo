@@ -3,3 +3,28 @@ service:
   identifier: prod
   orgIdentifier: default
   projectIdentifier: Harness
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: prod
+            type: HelmChart
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: harnessjavademo
+                  gitFetchType: Branch
+                  folderPath: helm-charts
+                  repoName: harness-java-demo
+                  branch: main
+              subChartPath: ""
+              valuesPaths:
+                - helm-charts/values.yaml
+                - helm-charts/values-prod.yaml
+              optionalValuesYaml: false
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              helmVersion: V3
+              fetchHelmChartMetadata: false
+    type: NativeHelm

@@ -4,12 +4,4 @@ pullPolicy: IfNotPresent
 service:
   type: ClusterIP
   port: 8080
-
-ingress:
-  enabled: true
-  className: nginx
-  host: harness-java-demo.local
-  path: /
-  pathType: Prefix
-
 resources: {}

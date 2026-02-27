@@ -6,8 +6,8 @@ template:
   spec:
     type: BuildAndPushDockerRegistry
     spec:
-      connectorRef: <+input>
-      repo: <+input>
+      connectorRef: harnessjavademodocker
+      repo: dockekroy/harness-java-demo
       tags:
         - <+pipeline.sequenceId>
   identifier: dockerbuildandpush

@@ -119,14 +119,6 @@ pipeline:
           deploymentType: NativeHelm
           service:
             serviceRef: prod
-            serviceInputs:
-              serviceDefinition:
-                type: NativeHelm
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           execution:
             steps:
               - step:

@@ -1,3 +1,4 @@
+// to verify CI trigger via git push
 package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;

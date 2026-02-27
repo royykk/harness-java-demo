@@ -1,7 +1,5 @@
 replicaCount: 1
 nodePort: 30009
-ingress:
-  host: harness-java-demo.local
 name: myapp  
 resources:
   requests:

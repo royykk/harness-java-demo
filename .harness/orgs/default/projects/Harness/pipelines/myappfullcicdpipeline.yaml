@@ -48,6 +48,35 @@ pipeline:
                     templateRef: dockerbuildandpush
                     versionLabel: "1"
     - stage:
+        name: Identify-global-version
+        identifier: Identifyglobalversion
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          #!/bin/bash
+
+                          global_version=<+pipeline.sequenceId>
+                    environmentVariables: []
+                    outputVariables:
+                      - name: global_version
+                        type: String
+                        value: global_version
+                  timeout: 10m
+        tags: {}
+    - stage:
         name: myApp-Dev-CD-Deployment
         identifier: myAppDevCDDeployment
         description: ""

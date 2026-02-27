@@ -29,7 +29,7 @@ service:
               fetchHelmChartMetadata: false
       artifacts:
         primary:
-          primaryArtifactRef: <+input>
+          primaryArtifactRef: prod
           sources:
             - spec:
                 connectorRef: harnessjavademodocker

@@ -29,12 +29,12 @@ service:
               fetchHelmChartMetadata: false
       artifacts:
         primary:
-          primaryArtifactRef: <+input>
+          primaryArtifactRef: dev
           sources:
             - spec:
                 connectorRef: harnessjavademodocker
                 imagePath: dockekroy/harness-java-demo
-                tag: <+input>
+                tag: <+pipeline.sequenceId>
                 digest: ""
               identifier: dev
               type: DockerRegistry

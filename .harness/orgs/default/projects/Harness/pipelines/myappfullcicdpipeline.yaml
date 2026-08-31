@@ -85,6 +85,17 @@ pipeline:
           deploymentType: NativeHelm
           service:
             serviceRef: dev
+            serviceInputs:
+              serviceDefinition:
+                type: NativeHelm
+                spec:
+                  artifacts:
+                    primary:
+                      sources:
+                        - identifier: dev
+                          type: DockerRegistry
+                          spec:
+                            tag: <+input>
           environment:
             environmentRef: Dev
             deployToAll: false
